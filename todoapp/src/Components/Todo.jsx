@@ -1,27 +1,17 @@
 import { useState } from "react";
-import TodoItem from "./TodoItem";
+
+import TOdoList from "./TodoList";
+import Form from "./Form";
 
 export default function Todo() {
   const [todo, setTodo] = useState(""); //store current value in variable i.e todo
   const [todos, setTodos] = useState([]); //store entire thing including previous enter data also
-  function handleSubmit(e) {
-    e.preventDefault();
-    setTodos([...todos, todo]);
-    setTodo("");
-  }
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={(e) => setTodo(e.target.value)}
-          type="text"
-          value={todo}
-        />
-        <button>Add</button>
-      </form>
-      {todos.map((item) => (
-        <TodoItem key={item} item={item} />
-      ))}
+      {/* psssing props from parent to child as they required */}
+      <Form setTodo={setTodo} todo={todo} todos={todos} setTodos={setTodos} />
+      <TOdoList todos={todos} />
     </div>
   );
 }
