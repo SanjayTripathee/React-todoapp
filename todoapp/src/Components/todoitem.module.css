@@ -15,8 +15,12 @@
   float: right;
   padding: 12px 20px;
   border: none;
-  background-color: #7ca187;
+  background-color: red;
   margin-top: -8px;
   border-radius: 8px;
   cursor: pointer;
+  color: white;
+}
+.completed {
+  text-decoration: line-through;
 }

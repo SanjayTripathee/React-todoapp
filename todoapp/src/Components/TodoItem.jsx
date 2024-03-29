@@ -5,10 +5,20 @@ export default function TodoItem({ item, todos, setTodos }) {
     //here todoitem!===item will return which means display and other will be remove
     setTodos(todos.filter((todo) => todo !== item));
   }
+  function handleClick(name) {
+    const newArray = todos.map((todo) =>
+      todo.name === name ? { ...todo, done: !todo.done } : todo
+    );
+    setTodos(newArray);
+    console.log(todos);
+  }
+  const markItem = item.done ? styles.completed : "";
   return (
     <div className={styles.item}>
       <div className={styles.itemName}>
-        {item}
+        <span className={markItem} onClick={() => handleClick(item.name)}>
+          {item.name}
+        </span>
         <span>
           <button
             onClick={() => handleDelete(item)}

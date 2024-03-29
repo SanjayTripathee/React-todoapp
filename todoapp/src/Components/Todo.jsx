@@ -4,7 +4,7 @@ import TOdoList from "./TodoList";
 import Form from "./Form";
 
 export default function Todo() {
-  const [todo, setTodo] = useState(""); //store current value in variable i.e todo
+  const [todo, setTodo] = useState({ name: "", done: false }); //store current value in variable i.e todo
   const [todos, setTodos] = useState([]); //store entire thing including previous enter data also
 
   return (
