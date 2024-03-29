@@ -11,7 +11,7 @@ export default function Todo() {
     <div>
       {/* psssing props from parent to child as they required */}
       <Form setTodo={setTodo} todo={todo} todos={todos} setTodos={setTodos} />
-      <TOdoList todos={todos} />
+      <TOdoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
